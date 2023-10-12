@@ -79,7 +79,7 @@ export const AuthProvider = ( { children } ) => {
 
         try {
             const res = await LoginRequest( user );
-            //console.log( res );
+            console.log( res );
             setIsAutenticated(true);
             Setuser( res.data );
         } catch (error) {
