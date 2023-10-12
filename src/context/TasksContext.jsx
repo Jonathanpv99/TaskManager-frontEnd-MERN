@@ -51,8 +51,7 @@ export const TaskProvider = ( { children }) => {
             const res = await createTasksRequest( task );
             console.log( res );
         } catch (error) {
-            console.log( error.response.data);
-            //setErrors( error.response.data);
+            console.log( error.response.data )
         }
     }
 
@@ -73,11 +72,11 @@ export const TaskProvider = ( { children }) => {
     const updateTask = async ( id, task ) => {
         try {
 
-           const res = await updateTasksRequest(id, task );
-            console.log( res )
+           await updateTasksRequest(id, task );
+
 
         } catch (error) {
-            console.log( error);
+            console.log( error.response.data )
         }
     }
 

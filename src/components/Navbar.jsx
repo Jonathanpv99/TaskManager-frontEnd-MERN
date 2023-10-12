@@ -5,13 +5,27 @@ const Navbar = () => {
 
     return (
         <nav className="bg-zinc-700 text-white my-3 flex justify-between py-5 px-10 rounded-lg">
-           <Link to='/'>
+            <div className='flex justify-between gap-x-8 items-center'>
+            {isAutenticated ? (
+                <div className='flex flex-col items-center'>
+                    <div className='w-10 h-10 bg-slate-200 rounded-full'></div>
+                    <Link to='/profile'>
+                    <h1>Profile</h1>
+                    </Link>
+                </div>
+            ): (<></>)}
+            <Link to='/'>
                 <h1 className="text-2xl font-bold ">Tasks Manager</h1>
             </Link>
-            <ul className="flex gap-x-2">
+            
+            </div>
+            <ul className="flex gap-x-20 items-center">
                 {isAutenticated ? (
                     <>
-                        <li>Welcom { user.username } </li>
+                        <li>Welcome { user.username } </li>
+                        <li>
+                            <Link to='/tasks'> Task List </Link>
+                        </li>
                         <li>
                             <Link to='/add-task'> Add Task </Link>
                         </li>
@@ -24,7 +38,7 @@ const Navbar = () => {
                         </li>
                     </>
                 ):(
-                    <>
+                    <div className='flex gap-x-10'>
                         <li>
                             <Link to='/login'
                                 className='bg-teal-600 px-4 py-1 rounded-md'
@@ -39,7 +53,7 @@ const Navbar = () => {
                                  Register 
                             </Link>
                         </li>
-                    </>
+                    </div>
                 )}
             </ul>
         </nav>

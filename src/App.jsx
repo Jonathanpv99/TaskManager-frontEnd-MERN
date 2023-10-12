@@ -15,7 +15,7 @@ const App = () => {
     <AuthProvider>
       <TaskProvider>
         <BrowserRouter>
-          <main className='container mx-auto p-8'>
+          <main className='container mx-auto px-8 py-4'>
           <Navbar/>
             <Routes >
               { /*Public Routes */}

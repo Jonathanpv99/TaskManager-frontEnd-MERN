@@ -5,7 +5,9 @@ import { useEffect } from 'react';
 
 const TaskFormPage = () => {
 
-    const { register, handleSubmit, setValue } = useForm();
+    const { register, handleSubmit, setValue, formState:{
+        errors
+    }} = useForm();
     const { createTask, getTask, updateTask } = useTasks();
 
     const navigate = useNavigate();
@@ -29,7 +31,9 @@ const TaskFormPage = () => {
         }else{
             createTask( data );
         }
-        navigate('/tasks');
+
+         navigate('/tasks');
+        
     })
 
     return (
@@ -37,15 +41,25 @@ const TaskFormPage = () => {
 
             <form onSubmit={ onSubmit }>
                 <input type="text" placeholder='Title'
-                    {...register('title')}
+                    {...register('title', { required: true} )}
                     autoFocus
                     className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
                 />
+                {
+                        errors.title && (
+                            <p className='text-red-500'>Title is required</p>
+                        )
+                }
                 
                 <textarea  rows="3" placeholder='description'
-                    {...register('description')}
+                    {...register('description', { required: true} )}
                     className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2'
                 ></textarea>
+                {
+                        errors.description && (
+                            <p className='text-red-500'>Description is required</p>
+                        )
+                }
                 <button>
                     Save
                 </button>
