@@ -25,7 +25,7 @@ const TaskCard = ( {task} ) => {
                 </div>
             </header>
             <p className="text-slate-300 my-6"> { task.description } </p>
-            <p> {new Date( task.date).toLocaleDateString()} </p>
+            <p> {new Date( task.updatedAt).toLocaleDateString()} </p>
         </div>
     )
 }

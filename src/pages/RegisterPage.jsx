@@ -27,7 +27,7 @@ const RegisterPage = () => {
     });
     
     return (
-        <div className='flex h-[calc(100vh-100px)] items-center justify-center'>
+        <div className='flex h-[calc(100vh-150px)] items-center justify-center desk-bg'>
             <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md'>
                 {
                     RegisterErrors.map( (error, i) => (
@@ -68,11 +68,11 @@ const RegisterPage = () => {
                             <p className='text-red-500'>Password is required</p>
                         )
                     }
-                    <button type='submit'>
+                    <button type='submit'  className='bg-emerald-700 px-4 py-1 rounded-md mt-2' >
                         Register
                     </button>
                 </form>
-                <p className='flex gap-x-2 justify-between'>
+                <p className='flex gap-x-2 justify-between mt-4'>
                         Already have an account? 
                         <Link to='/login' className='text-sky-400'> Login Up</Link>
                     </p>

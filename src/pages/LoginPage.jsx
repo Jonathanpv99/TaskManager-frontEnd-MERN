@@ -22,7 +22,7 @@ const LoginPage = () => {
     },[isAutenticated])
 
     return (
-        <div className='flex h-[calc(100vh-100px)] items-center justify-center'>
+        <div className='flex h-[calc(100vh-150px)] items-center justify-center desk-bg'>
             <div className='bg-zinc-800 max-w-md w-full p-10 rounded-md'>
                 {
                     SigninErrors.map( (error, i) => (
@@ -54,11 +54,11 @@ const LoginPage = () => {
                             <p className='text-red-500'>Password is required</p>
                         )
                     }
-                    <button type='submit'>
+                    <button type='submit' className='bg-emerald-700 px-4 py-1 rounded-md mt-2'>
                         Login
                     </button>
                 </form>
-                <p className='flex gap-x-2 justify-between'>
+                <p className='flex gap-x-2 justify-between mt-4'>
                     Don´t have an account? 
                     <Link to='/register' className='text-sky-400'> Sign Up</Link>
                 </p>

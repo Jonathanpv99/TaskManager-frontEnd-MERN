@@ -6,3 +6,19 @@ body{
     background-color: #202020;
     color: white;
 }
+
+.desk-bg {
+  background-image: url('./assets/escritorio1.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5; 
+}
+
+.chalkboard-bg {
+  background-image: url('./assets/pizarron.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
