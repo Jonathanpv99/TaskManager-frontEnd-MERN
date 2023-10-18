@@ -1,5 +1,7 @@
 import { useAuth } from '../context/authContext';
 import { Link } from 'react-router-dom';
+import { FcTodoList, FcButtingIn} from 'react-icons/fc';
+
 const Navbar = () => {
     const { isAutenticated, user, logout } = useAuth();
 
@@ -8,12 +10,15 @@ const Navbar = () => {
             <div className='flex justify-between gap-x-8 items-center'>
             {isAutenticated ? (
                 <div className='flex flex-col items-center'>
-                    <div className='w-10 h-10 bg-slate-200 rounded-full'></div>
-                    <Link to='/profile'>
-                    <h1>Profile</h1>
+                    <Link to='/profile'> 
+                        <h1><FcButtingIn size={40}/> Profile </h1>
                     </Link>
                 </div>
-            ): (<></>)}
+            ): (
+                <Link to='/'> 
+                    <FcTodoList size={40}/>
+                </Link>
+            )}
             <Link to='/'>
                 <h1 className="text-2xl font-bold ">Tasks Manager</h1>
             </Link>
@@ -22,7 +27,7 @@ const Navbar = () => {
             <ul className="flex gap-x-20 items-center">
                 {isAutenticated ? (
                     <>
-                        <li className='font-extrabold text-2xl text-emerald-500'>Welcome { user.username } </li>
+                        <li className='font-extrabold text-2xl text-teal-600'>Welcome { user.username } </li>
                         <li>
                             <Link to='/tasks' className='font-bold'> Task List </Link>
                         </li>
@@ -41,14 +46,14 @@ const Navbar = () => {
                     <div className='flex gap-x-10'>
                         <li>
                             <Link to='/login'
-                                className='bg-emerald-700 px-4 py-1 rounded-md'
+                                className='bg-teal-600 px-4 py-1 rounded-md'
                             > 
                                 Login 
                             </Link>
                         </li>
                         <li>
                             <Link to='/register' 
-                                className='bg-emerald-700 px-4 py-1 rounded-md'
+                                className='bg-teal-600 px-4 py-1 rounded-md'
                             >
                                  Register 
                             </Link>

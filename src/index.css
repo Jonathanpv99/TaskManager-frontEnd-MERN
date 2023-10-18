@@ -22,3 +22,17 @@ body{
   background-repeat: no-repeat;
   opacity: 0.5;
 }
+
+.clasroom-bg {
+  background-image: url('./assets/salon.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.homework-bg{
+  background-image: url('./assets/libreta.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
